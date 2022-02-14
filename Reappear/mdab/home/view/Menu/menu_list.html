@@ -1,0 +1,53 @@
+                
+
+                <!-- Table Hover -->
+                <div class="block-area" id="tableHover">
+                    <h3 class="block-title">{:$action}</h3>
+                    <div class="table-responsive overflow">
+                        <table class="table table-bordered table-hover tile">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>菜单名</th>
+                                    <th>控制器名/方法名</th>
+                                    <th>图标名</th>
+                                    <th>类型</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="menu_group" id="vo"}
+                                    <tr>
+                                        <td hidden="">{$vo.id}</td>
+                                        <td>{$key+1}</td>
+                                        <td>{$vo.menu_name} </td>
+                                        <td>{$vo.function_name} </td>
+                                        <td>{$vo.class} </td>
+                                        <td>{$vo.type} </td>
+                                        <td>
+                                            {in name="11" value="$Think.session.user_info.qualifications"}
+                                                <a class="btn btn-sm" href='{:url("menu_update",array("id"=>$vo.id))}'>修改</a>
+
+                                            {/in}
+                                            {in name="12" value="$Think.session.user_info.qualifications"}
+                                                <button class="btn btn-sm btn_delete" number='{$vo.id}'>删除</button>
+
+                                            {/in}
+                                        </td>
+                                    </tr>
+                                {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            
+                
+            </section>
+            <br/><br/>
+            <script type="text/javascript">
+                var btn_del_url = "{:url('Menu/menu_delete')}";
+
+            </script>
+        
+

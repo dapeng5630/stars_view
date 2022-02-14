@@ -1,0 +1,46 @@
+                
+
+                <!-- Table Hover -->
+                <div class="block-area" id="tableHover">
+                    <h3 class="block-title">{:$action}</h3>
+                    <div class="table-responsive overflow">
+                        <table class="table table-bordered table-hover tile">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>账号</th>
+                                    <th>登录时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="user_group" id="vo"}
+                                    <tr>
+                                        <td hidden="">{$vo.id}</td>
+                                        <td>{$key+1}</td>
+                                        <td>{$vo.identity} </td>
+                                        <td>{$vo.logintime|date="Y-m-d H:i:s"} </td>
+                                        <td>
+                                            {in name="5" value="$Think.session.user_info.qualifications"}
+                                                <a class="btn btn-sm" href="{:url('user_update',array('id'=>$vo.id))}">修改</a>
+                                            {/in}
+                                            {in name="6" value="$Think.session.user_info.qualifications"}
+                                                <button class="btn btn-sm btn_delete" number="{$vo.id}">删除</button>
+                                            {/in}
+                                        </td>
+                                    </tr>
+                                {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            
+                
+            </section>
+            <br/><br/>
+            <script type="text/javascript">
+                var btn_del_url = "{:url('User/user_delete')}";
+
+            </script>
+

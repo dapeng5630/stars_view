@@ -1,0 +1,61 @@
+    <div class="block-area" id="basic">
+        <h3 class="block-title">填写菜单信息</h3>
+        <div class="tile p-15">
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">菜单名</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="菜单名" name="menu_name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">控制器名/方法名</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="控制器名/方法名" name="function_name" >
+                </div>
+                
+                <div class="form-group">
+                     <label for="exampleInputPassword1">图标名</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputPassword1" placeholder="图标名" name="class" >
+                </div>
+                
+                <style type="text/css">
+                    .bootstrap-select{
+                        opacity: 1;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                    }
+                </style>
+                <br/>
+                <p>类型</p>
+                <div class="row">
+                    <div class="col-md-2 m-b-15">
+                        <select class="selectpicker" name="type">
+                            <option value ="dropdown" >dropdown</option>
+                            <option value ="active" >active</option>
+                            <option value ="hidden" >hidden</option>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+                <p>父级</p>
+                <div class="row">
+                    <div class="col-md-2 m-b-15">
+                        <select class="selectpicker" name="pid">
+                            <option value ="" >顶级</option>
+                            {volist name="menu_superior_group" id="vo"}
+                                <option value ="{$vo.id}" >{$vo.menu_name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-sm m-t-10">添加</button>
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        // $(function(){
+        //     $('select').selectpicker();
+        // });
+        
+    </script>
+</section>

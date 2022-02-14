@@ -1,0 +1,50 @@
+    <div class="block-area" id="basic">
+        <h3 class="block-title">填写菜单信息</h3>
+        <div class="tile p-15">
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">账号</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="账号" name="user" >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">密码</label>
+                    <input type="password" class="form-control input-sm" id="exampleInputEmail1" placeholder="密码" name="password" >
+                </div>
+                
+                <p>权限</p>
+                <div class="form-group m-b-15">
+                    {volist name="Menu_info_arr" id="vo"}
+                        <label class="checkbox-inline">
+                            <span class="checkableBox">
+                                <input type="checkbox" class="validate[minCheckbox[2]]" name="Menu_group[]" id="inlineCheckbox5" value="{$vo.id}"> 
+                            </span>
+                            {$vo.menu_name}
+                        </label>
+                        <br>
+                        {volist name="vo['song']" id="sub"}
+                            <label class="checkbox-inline">
+                                <span class="checkableBox">
+                                    <input type="checkbox" class="validate[minCheckbox[2]]" name="Menu_group[]" id="inlineCheckbox5" value="{$sub.id}"> 
+                                </span>
+                                {$sub.menu_name}
+                            </label>
+                        {/volist}
+                        <br>
+                        <hr>
+                    {/volist}
+                    
+                </div>
+
+                <button type="submit" class="btn btn-sm m-t-10">添加</button>
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        // $(function(){
+        //     $('select').selectpicker();
+        // });
+        
+    </script>
+</section>

@@ -1,0 +1,67 @@
+    <div class="block-area" id="basic">
+        <h3 class="block-title">填写菜单信息（*为必填项）</h3>
+        <div class="tile p-15">
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">接口别名*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="接口别名" name="api_name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">jsonrpc*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="jsonrpc" name="jsonrpc" >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ip*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="ip" name="ip" >
+                </div>
+                
+                <div class="form-group">
+                     <label for="exampleInputPassword1">user_login*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputPassword1" placeholder="user_login" name="user_login" >
+                </div>
+
+                <div class="form-group">
+                     <label for="exampleInputPassword1">user_get*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputPassword1" placeholder="user_get" name="user_get" >
+                </div>
+
+                <div class="form-group">
+                     <label for="exampleInputPassword1">user*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputPassword1" placeholder="user" name="user" >
+                </div>
+
+                <div class="form-group">
+                     <label for="exampleInputPassword1">password*</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputPassword1" placeholder="password" name="password" >
+                </div>
+                
+                <div class="form-group m-b-15">
+                    <p>状态*</p>
+                    <label class="radio-inline">
+                        <span class="checkableBox checkableBox-radio">    
+                            <input type="radio" class="validate[required]" name="state" value="1">
+                        </span>
+                        启用
+                    </label>
+                    <label class="radio-inline">
+                        <span class="checkableBox checkableBox-radio"> 
+                            <input type="radio" checked="checked" class="validate[required]" name="state" value="2">
+                        </span>
+                        未用
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-sm m-t-10">添加</button>
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        // $(function(){
+        //     $('select').selectpicker();
+        // });
+        
+    </script>
+</section>

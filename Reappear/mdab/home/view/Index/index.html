@@ -1,0 +1,92 @@
+
+<div class="block-area">
+    <div class="row">
+        <div class="col-md-3 col-xs-6">
+            <div class="tile quick-stats">
+                <div class="data">
+                    <h2 >{$server_number}</h2>
+                    <small>主机总数</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="tile quick-stats">
+                <div class="data">
+                    <h2 >{$normal_number}</h2>
+                    <small>可用主机数</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="tile quick-stats">
+                <div class="data">
+                    <h2 >{$error_number}</h2>
+                    <small>不可用主机数</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="tile quick-stats media">
+                <div class="media-body">
+                    <h2 >{$alert_number}</h2>
+                    <small>告警数</small>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-3 col-xs-6">
+            <div class="tile quick-stats media">
+                <div id="stats-line-4" class="pull-left"></div>
+                <div class="media-body">
+                    <h2 >0</h2>
+                    <small>Orders today</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <div class="tile quick-stats media">
+                <div id="stats-line" class="pull-left"></div>
+                <div class="media-body">
+                    <h2 >0</h2>
+                    <small>Site visits today</small>
+                </div>
+            </div>
+        </div> -->
+        <div class="block-area" id="tableHover">
+            <h3 class="block-title">{:$action}</h3>
+            <div class="table-responsive overflow">
+                <table class="table table-bordered table-hover tile">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>时间</th>
+                            <th>主机</th>
+                            <th>严重性</th>
+                            <th>持续时间</th>
+                            <th>动作</th>
+                            <th>标记</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="event_list" id="vo"}
+                            <tr>
+                                <td hidden="">{$vo.eventid}</td>
+                                <td>{$key+1}</td>
+                                <td >{$vo.clock_time} </td>
+                                <td >{$vo.hosts_name} </td>
+                                <td bgcolor="{$vo.grade_colour}">{$vo.name} </td>
+                                <td >{$vo.continued_time} </td>
+                                <td >{$vo.opdata_status} </td>
+                                <td >{$vo.tags} </td>
+                                
+                            </tr>
+                        {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+<hr class="whiter" />
+<!-- Main Widgets

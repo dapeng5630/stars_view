@@ -1,0 +1,64 @@
+                
+
+                <!-- Table Hover -->
+                <div class="block-area" id="tableHover">
+                    <h3 class="block-title">{:$action}</h3>
+                    <div class="table-responsive overflow">
+                        <table class="table table-bordered table-hover tile">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>接口别名</th>
+                                    <th>jsonrpc</th>
+                                    <th>ip</th>
+                                    <th>user_login</th>
+                                    <th>user_get</th>
+                                    <th>user</th>
+                                    <th>password</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="api_group" id="vo"}
+                                    <tr>
+                                        <td hidden="">{$vo.id}</td>
+                                        <td>{$key+1}</td>
+                                        <td>{$vo.api_name} </td>
+                                        <td>{$vo.jsonrpc} </td>
+                                        <td>{$vo.ip} </td>
+                                        <td>{$vo.user_login} </td>
+                                        <td>{$vo.user_get} </td>
+                                        <td>{$vo.user} </td>
+                                        <td>{$vo.password} </td>
+                                        <td>
+                                            {in name="16" value="$Think.session.user_info.qualifications"}
+                                                {if  $vo.state == 1}
+                                                    <button value="{$vo.state}" class="btn btn-sm validation-clear updata_api_state" number="{$vo.id}">启用</button>
+                                                {else /}
+                                                    <button value="{$vo.state}" class="btn btn-sm validation-clear updata_api_state" number="{$vo.id}" >未用</button>
+                                                {/if}
+                                                <a class="btn btn-sm" href='{:url("api_update",array("id"=>$vo.id))}'>修改</a>
+
+                                            {/in}
+                                            {in name="17" value="$Think.session.user_info.qualifications"}
+                                                <button class="btn btn-sm btn_delete" number='{$vo.id}'>删除</button>
+
+                                            {/in}
+                                        </td>
+                                    </tr>
+                                {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            
+                
+            </section>
+            <br/><br/>
+        
+            <script type="text/javascript">
+                var apiupdateurl = "{:url('Api/api_update')}";
+                var btn_del_url = "{:url('Api/api_delete')}";
+
+            </script>

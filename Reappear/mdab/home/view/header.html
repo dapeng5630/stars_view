@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="UTF-8">
+
+        <meta name="description" content="Violate Responsive Admin Template">
+        <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+
+        <title>Monitor display</title>
+            
+        <!-- CSS -->
+        <link href="__STATIC__/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="__STATIC__/css/animate.min.css" rel="stylesheet">
+        <link href="__STATIC__/css/font-awesome.min.css" rel="stylesheet">
+        <link href="__STATIC__/css/form.css" rel="stylesheet">
+        <link href="__STATIC__/css/calendar.css" rel="stylesheet">
+        <link href="__STATIC__/css/style.css" rel="stylesheet">
+        <link href="__STATIC__/css/icons.css" rel="stylesheet">
+        <link href="__STATIC__/css/generics.css" rel="stylesheet">
+        <link href="__STATIC__/css/bootstrap-select.min.css" rel="stylesheet">
+
+    </head>
+    <body id="skin-blur-violate">
+
+        <header id="header" class="media">
+            <a href="" id="menu-toggle"></a> 
+            <a class="logo pull-left" href="index.html">Monitor display 1.0</a>
+            
+            <div class="media-body">
+                <div class="media" id="top-menu">
+                    <!-- <div class="pull-left tm-icon">
+                        <a data-drawer="messages" class="drawer-toggle" href="">
+                            <i class="sa-top-message"></i>
+                            <i class="n-count animated">5</i>
+                            <span>Messages</span>
+                        </a>
+                    </div>
+                    <div class="pull-left tm-icon">
+                        <a data-drawer="notifications" class="drawer-toggle" href="">
+                            <i class="sa-top-updates"></i>
+                            <i class="n-count animated">9</i>
+                            <span>Updates</span>
+                        </a>
+                    </div> -->
+
+                    
+
+                    <div id="time" class="pull-right">
+                        <span id="hours"></span>
+                        :
+                        <span id="min"></span>
+                        :
+                        <span id="sec"></span>
+                    </div>
+                    
+                    <div class="media-body">
+                        <input type="text" class="main-search">
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="clearfix"></div>
+        
+        <section id="main" class="p-relative" role="main">
+            
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                
+                
+                <!-- Side Menu 侧边菜单 -->
+                <ul class="list-unstyled side-menu">
+                    <?php
+                        foreach ($_SESSION['think']['user_info']['Menu_info_arr'] as $key => $value){
+
+                            if($value["type"] == "active"){
+                                echo '<li class="'.$value['type'].'"><a class="'.$value['class'].'" href="'.url($value['function_name'].'/'.$value['function_name']).'"><span class="menu-item">'.$value['menu_name'].'</span></a>';
+                            }else{
+                                echo '<li class="'.$value['type'].'"><a class="'.$value['class'].'" ><span class="menu-item">'.$value['menu_name'].'</span></a>';
+
+                            }
+                            if(!empty($value['song'])){
+                                echo '<ul class="list-unstyled menu-item">';
+                                foreach ($value['song'] as $Secondary_key => $Secondary_value){
+                                    echo '<li><a href="'.url($value['function_name'].'/'.$Secondary_value['function_name']).'">'.$Secondary_value['menu_name'].'</a></li>';
+                                }
+                                echo '</ul>';
+                            }
+                            echo '</li>';
+                        }
+                    ?>
+                
+                <li style="position: absolute;bottom: 0%;left: 15%;">
+                    <a  href="{:url('Login/user_out')}">退出</a>
+                </li>
+
+                </ul>
+                    
+            </aside>
+            
+            <!-- Content -->
+            <section id="content" class="container">
+            
+                
+                
+                
+                
+                <!-- Breadcrumb -->
+                <ol class="breadcrumb hidden-xs">
+                    <li><a href="#">{:$controller}</a></li>
+                    <li class="active">{:$action}</li>
+                </ol>
+                
+                <h4 class="page-title">{:$action}</h4>
+                
+                <hr class="whiter" />
+                

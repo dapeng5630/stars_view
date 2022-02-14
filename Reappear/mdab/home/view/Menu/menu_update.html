@@ -1,0 +1,61 @@
+    <div class="block-area" id="basic">
+        <h3 class="block-title">填写菜单信息</h3>
+        <div class="tile p-15">
+            <form role="form" action="" method="post">
+                <input type="" hidden="hidden" name="id" value="{$menu_superior['id']}">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">菜单名</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" value="{$menu_superior['menu_name']}" placeholder="菜单名" name="menu_name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">控制器名/方法名</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="控制器名/方法名" value="{$menu_superior['function_name']}" name="function_name" >
+                </div>
+                
+                <div class="form-group">
+                     <label for="exampleInputPassword1">图标名</label>
+                    <input type="text" class="form-control input-sm" id="exampleInputPassword1" placeholder="图标名" value="{$menu_superior['class']}" name="class" >
+                </div>
+                
+                <style type="text/css">
+                    .bootstrap-select{
+                        opacity: 1;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                    }
+                </style>
+                <br/>
+                <p>类型</p>
+                <div class="row">
+                    <div class="col-md-2 m-b-15">
+                        <select class="selectpicker" name="type">
+                            <option value ="dropdown" {eq name="$menu_superior['type']" value="dropdown"}selected = "selected"{/eq} >dropdown</option>
+                            <option value ="active" {eq name="$menu_superior['type']" value="active"}selected = "selected"{/eq} >active</option>
+                            <option value ="hidden" {eq name="$menu_superior['type']" value="hidden"}selected = "selected"{/eq} >hidden</option>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+                <p>父级</p>
+                <div class="row">
+                    <div class="col-md-2 m-b-15">
+                        <select class="selectpicker" name="pid">
+                            {volist name="menu_superior_group" id="vo"}
+                                <option value ="{$vo.id}" {eq name="$menu_superior['pid']" value="$vo['id']"}selected = "selected"{/eq} >{$vo.menu_name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-sm m-t-10">修改</button>
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        // $(function(){
+        //     $('select').selectpicker();
+        // });
+        
+    </script>
+</section>

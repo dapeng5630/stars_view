@@ -1,0 +1,61 @@
+        </section>
+
+            
+        <script type="text/javascript">
+            var jsurl = "__STATIC__";
+        </script>
+        <!-- Javascript Libraries -->
+        <!-- jQuery -->
+        <script src="__STATIC__/js/jquery.3.5.1.min.js"></script>
+        <script src="__STATIC__/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+        <script src="__STATIC__/js/jquery.easing.1.3.js"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+        
+
+        <!-- Charts -->
+        <script src="__STATIC__/js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+        <script src="__STATIC__/js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+        <script src="__STATIC__/js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+        <script src="__STATIC__/js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
+
+        <script src="__STATIC__/js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+        <script src="__STATIC__/js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+        <script src="__STATIC__/js/charts.js"></script> <!-- All the above chart related functions -->
+
+        <!-- Map -->
+        <script src="__STATIC__/js/maps/jvectormap.min.js"></script> <!-- jVectorMap main library -->
+        <script src="__STATIC__/js/maps/usa.js"></script> <!-- USA Map for jVectorMap -->
+
+        <!--  Form Related -->
+        <script src="__STATIC__/js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+
+        <!-- UX -->
+        <script src="__STATIC__/js/scroll.min.js"></script> <!-- Custom Scrollbar -->
+
+        <!-- Other -->
+        <script src="__STATIC__/js/calendar.min.js"></script> <!-- Calendar -->
+
+        <script type="text/javascript">
+            var api_charts_url = "{:url('Index/data_exhibit')}";
+            var jsurl = "__STATIC__";
+        </script>
+        
+
+
+        <!-- <script src="__STATIC__/js/feeds.min.js"></script> --> <!-- News Feeds -->
+        <script src="__STATIC__/js/functions.js"></script>
+        
+        <!-- Bootstrap -->
+        <script src="__STATIC__/js/bootstrap.min.js"></script>
+        <script src="__STATIC__/js/bootstrap-select.min.js"></script>
+        
+        <script src="__STATIC__/js/yyjs/Universal.js"></script>
+        <!-- <script src="__STATIC__/js/yyjs/zbbix_api_charts.js"></script> -->
+        
+        {switch $Request.action }
+            {case api_list }<script src="__STATIC__/js/yyjs/customize.js"></script>{/case}
+        {/switch}
+
+
+    </body>
+</html>
